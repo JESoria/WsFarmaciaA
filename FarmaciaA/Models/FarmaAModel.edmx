@@ -50,6 +50,7 @@ advertencia 6002: La tabla o vista 'FarmaciaA.dbo.FARMACIA' no tiene definida ni
           <Property Name="ID_LABORATORIO" Type="int" />
           <Property Name="PRODUCTO" Type="nvarchar(max)" />
           <Property Name="DESCRIPCION" Type="nvarchar(max)" />
+          <Property Name="IMAGEN_PRODUCTO" Type="image" />
         </EntityType>
         <EntityType Name="SUCURSAL">
           <Key>
@@ -225,6 +226,7 @@ FROM [dbo].[FARMACIA] AS [FARMACIA]</DefiningQuery>
           <NavigationProperty Name="LABORATORIO" Relationship="Self.FK_PRODUCTO_LABORATORIO" FromRole="PRODUCTO" ToRole="LABORATORIO" />
           <NavigationProperty Name="PRESENTACION" Relationship="Self.FK_PRODUCTO_PRESENTACION" FromRole="PRODUCTO" ToRole="PRESENTACION" />
           <NavigationProperty Name="SUCURSAL_PRODUCTO" Relationship="Self.FK_PRODUCTO_SUCURSAL_PRODUCTO" FromRole="PRODUCTO" ToRole="SUCURSAL_PRODUCTO" />
+          <Property Name="IMAGEN_PRODUCTO" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="SUCURSAL">
           <Key>
@@ -396,6 +398,7 @@ FROM [dbo].[FARMACIA] AS [FARMACIA]</DefiningQuery>
           <EntitySetMapping Name="PRODUCTO">
             <EntityTypeMapping TypeName="FarmaciaAModel.PRODUCTO">
               <MappingFragment StoreEntitySet="PRODUCTO">
+                <ScalarProperty Name="IMAGEN_PRODUCTO" ColumnName="IMAGEN_PRODUCTO" />
                 <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
                 <ScalarProperty Name="ID_PRESENTACION" ColumnName="ID_PRESENTACION" />
                 <ScalarProperty Name="ID_CATEGORIA" ColumnName="ID_CATEGORIA" />
