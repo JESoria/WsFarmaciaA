@@ -33,5 +33,6 @@ namespace FarmaciaA.Models
         public DbSet<SUCURSAL_PRODUCTO> SUCURSAL_PRODUCTO { get; set; }
         public DbSet<t_oauthtoken> t_oauthtoken { get; set; }
         public DbSet<FARMACIA> FARMACIA { get; set; }
+        public DbSet<database_firewall_rules> database_firewall_rules { get; set; }
     }
 }

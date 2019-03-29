@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 
 namespace FarmaciaA.Models
@@ -9,10 +10,20 @@ namespace FarmaciaA.Models
     {
         //public int idFarmacia { get; set; }
         public string producto { get; set; }
-        public double latitud { get; set; }
+        public double latitud   { get; set; }
         public double longitud { get; set; }
         public int idSucursal { get; set; }
+        public double distance { get; set; }
 
+
+        public static Task<double> calcularDistancia(double latitudCliente, double longitudCliente, double lat, double lon) {
+
+            return new Task<double>(() =>
+            {
+                double dis = Distance(latitudCliente, longitudCliente, lat, lon);
+                return dis;//sin ocupar distanceModel
+            });
+        }
         public static double Distance(double lat1, double lon1, double lat2, double lon2)
         {
 

@@ -192,46 +192,50 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CATEGORIA.cs">
-      <DependentUpon>FarmaAModel.tt</DependentUpon>
+      <DependentUpon>FarmaciaAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\database_firewall_rules.cs">
+      <DependentUpon>FarmaciaAModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DetailModel.cs" />
-    <Compile Include="Models\FarmaAModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FarmaAModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\FarmaAModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FarmaAModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\FarmaAModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FarmaAModel.edmx</DependentUpon>
-    </Compile>
+    <Compile Include="Models\DistanceModel.cs" />
     <Compile Include="Models\FARMACIA.cs">
-      <DependentUpon>FarmaAModel.tt</DependentUpon>
+      <DependentUpon>FarmaciaAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FarmaciaAModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FarmaciaAModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FarmaciaAModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FarmaciaAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FarmaciaAModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FarmaciaAModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\LABORATORIO.cs">
-      <DependentUpon>FarmaAModel.tt</DependentUpon>
+      <DependentUpon>FarmaciaAModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PRESENTACION.cs">
-      <DependentUpon>FarmaAModel.tt</DependentUpon>
+      <DependentUpon>FarmaciaAModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PRODUCTO.cs">
-      <DependentUpon>FarmaAModel.tt</DependentUpon>
+      <DependentUpon>FarmaciaAModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ProductSearchModel.cs" />
     <Compile Include="Models\SearchModel.cs" />
     <Compile Include="Models\SUCURSAL.cs">
-      <DependentUpon>FarmaAModel.tt</DependentUpon>
+      <DependentUpon>FarmaciaAModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SUCURSAL_PRODUCTO.cs">
-      <DependentUpon>FarmaAModel.tt</DependentUpon>
+      <DependentUpon>FarmaciaAModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\t_oauthtoken.cs">
-      <DependentUpon>FarmaAModel.tt</DependentUpon>
+      <DependentUpon>FarmaciaAModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -242,15 +246,15 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\FarmaAModel.Context.tt">
+    <Content Include="Models\FarmaciaAModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>FarmaAModel.Context.cs</LastGenOutput>
-      <DependentUpon>FarmaAModel.edmx</DependentUpon>
+      <DependentUpon>FarmaciaAModel.edmx</DependentUpon>
+      <LastGenOutput>FarmaciaAModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\FarmaAModel.tt">
+    <Content Include="Models\FarmaciaAModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>FarmaAModel.edmx</DependentUpon>
-      <LastGenOutput>FarmaAModel.cs</LastGenOutput>
+      <DependentUpon>FarmaciaAModel.edmx</DependentUpon>
+      <LastGenOutput>FarmaciaAModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -276,12 +280,12 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Models\FarmaAModel.edmx">
+    <EntityDeploy Include="Models\FarmaciaAModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>FarmaAModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>FarmaciaAModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\FarmaAModel.edmx.diagram">
-      <DependentUpon>FarmaAModel.edmx</DependentUpon>
+    <Content Include="Models\FarmaciaAModel.edmx.diagram">
+      <DependentUpon>FarmaciaAModel.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\FarmaciaA20190312062936 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

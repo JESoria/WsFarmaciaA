@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="277e7fd41caf4cdd83a69f246fc294d0" Name="Diagram1">
+        <EntityTypeShape EntityType="FarmaciaAModel.CATEGORIA" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FarmaciaAModel.LABORATORIO" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FarmaciaAModel.PRESENTACION" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FarmaciaAModel.PRODUCTO" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="FarmaciaAModel.SUCURSAL" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FarmaciaAModel.SUCURSAL_PRODUCTO" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FarmaciaAModel.t_oauthtoken" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FarmaciaAModel.FARMACIA" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FarmaciaAModel.database_firewall_rules" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <AssociationConnector Association="FarmaciaAModel.FK__PRODUCTO__ID_CAT__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="FarmaciaAModel.FK__PRODUCTO__ID_LAB__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="FarmaciaAModel.FK__PRODUCTO__ID_PRE__619B8048" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

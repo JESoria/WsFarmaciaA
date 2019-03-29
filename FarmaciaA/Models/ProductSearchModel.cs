@@ -37,6 +37,6 @@ namespace FarmaciaA.Models
         public double distancia { get; set; }
 
         [JsonProperty(PropertyName = "idfarmacia")]
-        public int idfarmacia { get; set; }
+        public int idFarmacia { get; set; }
     }
 }
