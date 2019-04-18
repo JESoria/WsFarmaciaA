@@ -194,9 +194,6 @@
     <Compile Include="Models\CATEGORIA.cs">
       <DependentUpon>FarmaciaAModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\database_firewall_rules.cs">
-      <DependentUpon>FarmaciaAModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\DetailModel.cs" />
     <Compile Include="Models\DistanceModel.cs" />
     <Compile Include="Models\FARMACIA.cs">
@@ -228,10 +225,19 @@
     </Compile>
     <Compile Include="Models\ProductSearchModel.cs" />
     <Compile Include="Models\SearchModel.cs" />
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>FarmaciaAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>FarmaciaAModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SUCURSAL.cs">
       <DependentUpon>FarmaciaAModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SUCURSAL_PRODUCTO.cs">
+      <DependentUpon>FarmaciaAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagrams.cs">
       <DependentUpon>FarmaciaAModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\t_oauthtoken.cs">

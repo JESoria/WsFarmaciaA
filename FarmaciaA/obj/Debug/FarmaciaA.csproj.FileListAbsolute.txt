@@ -114,8 +114,8 @@ C:\Users\Xiomara Alarcon\Documents\GitHub\WsFarmaciaA\FarmaciaA\bin\es\System.We
 C:\Users\Xiomara Alarcon\Documents\GitHub\WsFarmaciaA\FarmaciaA\bin\es\System.Web.WebPages.resources.dll
 C:\Users\Xiomara Alarcon\Documents\GitHub\WsFarmaciaA\FarmaciaA\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Users\Xiomara Alarcon\Documents\GitHub\WsFarmaciaA\FarmaciaA\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Xiomara Alarcon\Documents\GitHub\WsFarmaciaA\FarmaciaA\obj\Debug\FarmaciaA.csprojAssemblyReference.cache
 C:\Users\Xiomara Alarcon\Documents\GitHub\WsFarmaciaA\FarmaciaA\obj\Debug\FarmaciaA.csproj.CoreCompileInputs.cache
+C:\Users\Xiomara Alarcon\Documents\GitHub\WsFarmaciaA\FarmaciaA\obj\Debug\FarmaciaA.csproj.CopyComplete
 C:\Users\Xiomara Alarcon\Documents\GitHub\WsFarmaciaA\FarmaciaA\obj\Debug\FarmaciaA.dll
 C:\Users\Xiomara Alarcon\Documents\GitHub\WsFarmaciaA\FarmaciaA\obj\Debug\FarmaciaA.pdb
-C:\Users\Xiomara Alarcon\Documents\GitHub\WsFarmaciaA\FarmaciaA\obj\Debug\FarmaciaA.csprojAssemblyReference.cache
-C:\Users\Xiomara Alarcon\Documents\GitHub\WsFarmaciaA\FarmaciaA\obj\Debug\FarmaciaA.csproj.CopyComplete

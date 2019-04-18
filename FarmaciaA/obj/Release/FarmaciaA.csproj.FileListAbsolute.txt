@@ -58,3 +58,4 @@ C:\Users\Xiomara Alarcon\Documents\GitHub\WsFarmaciaA\FarmaciaA\obj\Release\Farm
 C:\Users\Xiomara Alarcon\Documents\GitHub\WsFarmaciaA\FarmaciaA\obj\Release\FarmaciaA.dll
 C:\Users\Xiomara Alarcon\Documents\GitHub\WsFarmaciaA\FarmaciaA\obj\Release\FarmaciaA.pdb
 C:\Users\Xiomara Alarcon\Documents\GitHub\WsFarmaciaA\FarmaciaA\obj\Release\FarmaciaA.csproj.CopyComplete
+C:\Users\Xiomara Alarcon\Documents\GitHub\WsFarmaciaA\FarmaciaA\obj\Release\FarmaciaA.csprojAssemblyReference.cache

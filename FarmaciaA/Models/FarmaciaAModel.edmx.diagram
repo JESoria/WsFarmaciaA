@@ -4,19 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a3fe0af75306413d8c20722271ee9d5f" Name="Diagram1">
-        <EntityTypeShape EntityType="FarmaciaAModel.CATEGORIA" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="FarmaciaAModel.LABORATORIO" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="FarmaciaAModel.PRESENTACION" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+      <Diagram DiagramId="29ce6219d4c1438581c20c9e5aba6573" Name="Diagram1">
+        <EntityTypeShape EntityType="FarmaciaAModel.CATEGORIA" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FarmaciaAModel.LABORATORIO" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FarmaciaAModel.PRESENTACION" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
         <EntityTypeShape EntityType="FarmaciaAModel.PRODUCTO" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="FarmaciaAModel.SUCURSAL" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FarmaciaAModel.SUCURSAL_PRODUCTO" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FarmaciaAModel.t_oauthtoken" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FarmaciaAModel.FARMACIA" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FarmaciaAModel.database_firewall_rules" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
-        <AssociationConnector Association="FarmaciaAModel.FK__PRODUCTO__ID_CAT__628FA481" ManuallyRouted="false" />
-        <AssociationConnector Association="FarmaciaAModel.FK__PRODUCTO__ID_LAB__6383C8BA" ManuallyRouted="false" />
-        <AssociationConnector Association="FarmaciaAModel.FK__PRODUCTO__ID_PRE__619B8048" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FarmaciaAModel.SUCURSAL" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FarmaciaAModel.SUCURSAL_PRODUCTO" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FarmaciaAModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FarmaciaAModel.t_oauthtoken" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FarmaciaAModel.FARMACIA" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="FarmaciaAModel.FK_PRODUCTO_CATEGORIA" ManuallyRouted="false" />
+        <AssociationConnector Association="FarmaciaAModel.FK_PRODUCTO_LABORATORIO" ManuallyRouted="false" />
+        <AssociationConnector Association="FarmaciaAModel.FK_PRODUCTO_PRESENTACION" ManuallyRouted="false" />
+        <AssociationConnector Association="FarmaciaAModel.FK_PRODUCTO_SUCURSAL_PRODUCTO" ManuallyRouted="false" />
+        <AssociationConnector Association="FarmaciaAModel.FK_SUCURSAL_SUCURSAL_PRODUCTO" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

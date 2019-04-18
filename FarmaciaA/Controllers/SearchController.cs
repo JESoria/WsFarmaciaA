@@ -38,7 +38,16 @@ namespace FarmaciaA.Controllers
                             if (callfun.FirstOrDefault() < 2)
                             {
 
-                                lista.Add(new ProductSearchModel() { sucursal = y.SUCURSAL1, idSucursal = y.ID_SUCURSAL, latitud = y.LATITUD, longitud = y.LONGITUD, direccion = y.DIRECCION, idSucursalProducto = x.ID_SUCURSAL_PRODUCTO, producto = w.PRODUCTO1, precio = Convert.ToDecimal(x.PRECIO), idFarmacia = Convert.ToInt32(Farmacia.ID_FARMACIA) });
+                                lista.Add(new ProductSearchModel() {
+                                    sucursal = y.SUCURSAL1,
+                                    idSucursal = y.ID_SUCURSAL,
+                                    latitud = y.LATITUD,
+                                    longitud = y.LONGITUD,
+                                    direccion = y.DIRECCION,
+                                    idSucursalProducto = x.ID_SUCURSAL_PRODUCTO,
+                                    producto = w.PRODUCTO1,
+                                    precio = Convert.ToDecimal(x.PRECIO),
+                                    idFarmacia = Convert.ToInt32(Farmacia.ID_FARMACIA) });
                             }
 
 

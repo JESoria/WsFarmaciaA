@@ -8,7 +8,6 @@ namespace FarmaciaA.Models
 {
     public class SearchModel
     {
-        //public int idFarmacia { get; set; }
         public string producto { get; set; }
         public double latitud   { get; set; }
         public double longitud { get; set; }

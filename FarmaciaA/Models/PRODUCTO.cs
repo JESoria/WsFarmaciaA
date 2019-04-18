@@ -14,6 +14,11 @@ namespace FarmaciaA.Models
     
     public partial class PRODUCTO
     {
+        public PRODUCTO()
+        {
+            this.SUCURSAL_PRODUCTO = new HashSet<SUCURSAL_PRODUCTO>();
+        }
+    
         public int ID_PRODUCTO { get; set; }
         public Nullable<int> ID_PRESENTACION { get; set; }
         public Nullable<int> ID_CATEGORIA { get; set; }
@@ -25,5 +30,6 @@ namespace FarmaciaA.Models
         public virtual CATEGORIA CATEGORIA { get; set; }
         public virtual LABORATORIO LABORATORIO { get; set; }
         public virtual PRESENTACION PRESENTACION { get; set; }
+        public virtual ICollection<SUCURSAL_PRODUCTO> SUCURSAL_PRODUCTO { get; set; }
     }
 }

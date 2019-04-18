@@ -14,11 +14,18 @@ namespace FarmaciaA.Models
     
     public partial class SUCURSAL
     {
+        public SUCURSAL()
+        {
+            this.SUCURSAL_PRODUCTO = new HashSet<SUCURSAL_PRODUCTO>();
+        }
+    
         public int ID_SUCURSAL { get; set; }
         public string SUCURSAL1 { get; set; }
         public string DIRECCION { get; set; }
         public string LONGITUD { get; set; }
         public string LATITUD { get; set; }
         public string TELEFONO { get; set; }
+    
+        public virtual ICollection<SUCURSAL_PRODUCTO> SUCURSAL_PRODUCTO { get; set; }
     }
 }

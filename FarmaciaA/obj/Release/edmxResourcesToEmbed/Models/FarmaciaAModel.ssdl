@@ -133,6 +133,15 @@ advertencia 6002: La tabla o vista 'FarmaciaA.sys.database_firewall_rules' no ti
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="deg2rad" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float">
+    <Parameter Name="deg" Type="float" Mode="In" />
+  </Function>
+  <Function Name="DistanceFromLatLonInKm" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float">
+    <Parameter Name="lon1" Type="float" Mode="In" />
+    <Parameter Name="lat1" Type="float" Mode="In" />
+    <Parameter Name="lon2" Type="float" Mode="In" />
+    <Parameter Name="lat2" Type="float" Mode="In" />
+  </Function>
   <EntityContainer Name="FarmaciaAModelStoreContainer">
     <EntitySet Name="CATEGORIA" EntityType="Self.CATEGORIA" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LABORATORIO" EntityType="Self.LABORATORIO" Schema="dbo" store:Type="Tables" />
