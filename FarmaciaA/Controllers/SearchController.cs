@@ -16,14 +16,26 @@ namespace FarmaciaA.Controllers
         [HttpPost]
         public IHttpActionResult NearbyDrugstore(SearchModel data)
         {
-            double lonC = data.longitud;
-            double latC = data.latitud;
 
             using (FarmaciaAEntities db = new FarmaciaAEntities())
             {
                 List<ProductSearchModel> lista = new List<ProductSearchModel>();
                 var Farmacia = db.FARMACIA.FirstOrDefault();
 
+                lista.AddRange(db.nearby(data.producto,data.longitud, data.latitud).ToList().Select(x => new ProductSearchModel {
+                    sucursal = x.SUCURSAL,
+                    idSucursal = x.ID_SUCURSAL,
+                    latitud = x.LATITUD,
+                    longitud = x.LONGITUD,
+                    direccion = x.DIRECCION,
+                    idSucursalProducto = x.ID_SUCURSAL_PRODUCTO,
+                    producto = x.PRODUCTO,
+                    precio = Convert.ToInt32(x.PRECIO), 
+                    idFarmacia = Convert.ToInt32(Farmacia.ID_FARMACIA)
+
+                }));
+
+                /*
                 db.SUCURSAL.ToList().ForEach(x =>
                 {
                     double lat = Convert.ToDouble(x.LATITUD, CultureInfo.CreateSpecificCulture("en-US"));
@@ -48,7 +60,7 @@ namespace FarmaciaA.Controllers
                             });
                         });
                     }
-                });
+                });*/
 
                 return Ok(lista);
 

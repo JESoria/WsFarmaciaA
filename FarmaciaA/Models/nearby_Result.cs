@@ -10,14 +10,16 @@
 namespace FarmaciaA.Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class nearby_Result
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public string SUCURSAL { get; set; }
+        public int ID_SUCURSAL { get; set; }
+        public string LATITUD { get; set; }
+        public string LONGITUD { get; set; }
+        public string DIRECCION { get; set; }
+        public int ID_SUCURSAL_PRODUCTO { get; set; }
+        public string PRODUCTO { get; set; }
+        public Nullable<decimal> PRECIO { get; set; }
     }
 }

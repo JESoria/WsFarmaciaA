@@ -68,16 +68,6 @@
     <NavigationProperty Name="PRODUCTO" Relationship="Self.FK_PRODUCTO_SUCURSAL_PRODUCTO" FromRole="SUCURSAL_PRODUCTO" ToRole="PRODUCTO" />
     <NavigationProperty Name="SUCURSAL" Relationship="Self.FK_SUCURSAL_SUCURSAL_PRODUCTO" FromRole="SUCURSAL_PRODUCTO" ToRole="SUCURSAL" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
   <EntityType Name="t_oauthtoken">
     <Key>
       <PropertyRef Name="authtoken_id" />
@@ -164,7 +154,6 @@
     <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" />
     <EntitySet Name="SUCURSAL" EntityType="Self.SUCURSAL" />
     <EntitySet Name="SUCURSAL_PRODUCTO" EntityType="Self.SUCURSAL_PRODUCTO" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="t_oauthtoken" EntityType="Self.t_oauthtoken" />
     <EntitySet Name="FARMACIA" EntityType="Self.FARMACIA" />
     <AssociationSet Name="FK_PRODUCTO_CATEGORIA" Association="Self.FK_PRODUCTO_CATEGORIA">
@@ -217,6 +206,11 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="nearby" IsComposable="true" ReturnType="Collection(FarmaciaAModel.nearby_Result)">
+      <Parameter Name="producto" Mode="In" Type="String" />
+      <Parameter Name="lonC" Mode="In" Type="String" />
+      <Parameter Name="latC" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -228,5 +222,15 @@
     <Property Type="Int32" Name="ID" Nullable="false" />
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="nearby_Result">
+    <Property Type="String" Name="SUCURSAL" Nullable="false" MaxLength="64" />
+    <Property Type="Int32" Name="ID_SUCURSAL" Nullable="false" />
+    <Property Type="String" Name="LATITUD" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="LONGITUD" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="DIRECCION" Nullable="false" MaxLength="256" />
+    <Property Type="Int32" Name="ID_SUCURSAL_PRODUCTO" Nullable="false" />
+    <Property Type="String" Name="PRODUCTO" Nullable="true" />
+    <Property Type="Decimal" Name="PRECIO" Nullable="true" Precision="7" Scale="2" />
   </ComplexType>
 </Schema>

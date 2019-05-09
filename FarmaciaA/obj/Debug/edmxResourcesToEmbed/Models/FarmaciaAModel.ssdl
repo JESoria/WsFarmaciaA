@@ -69,16 +69,6 @@ advertencia 6002: La tabla o vista 'FarmaciaA.dbo.FARMACIA' no tiene definida ni
     <Property Name="EXISTENCIA" Type="int" Nullable="false" />
     <Property Name="PRECIO" Type="decimal" Precision="7" Scale="2" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
   <EntityType Name="t_oauthtoken">
     <Key>
       <PropertyRef Name="authtoken_id" />
@@ -89,7 +79,7 @@ advertencia 6002: La tabla o vista 'FarmaciaA.dbo.FARMACIA' no tiene definida ni
     <Property Name="token" Type="varchar(max)" />
     <Property Name="date" Type="datetime" />
   </EntityType>
-  <Association Name="FK_PRODUCTO_CATEGORIA">
+  <Association Name="FK__PRODUCTO__ID_CAT__1ED998B2">
     <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="0..1" />
     <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
     <ReferentialConstraint>
@@ -101,7 +91,7 @@ advertencia 6002: La tabla o vista 'FarmaciaA.dbo.FARMACIA' no tiene definida ni
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_PRODUCTO_LABORATORIO">
+  <Association Name="FK__PRODUCTO__ID_LAB__1FCDBCEB">
     <End Role="LABORATORIO" Type="Self.LABORATORIO" Multiplicity="0..1" />
     <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
     <ReferentialConstraint>
@@ -113,7 +103,7 @@ advertencia 6002: La tabla o vista 'FarmaciaA.dbo.FARMACIA' no tiene definida ni
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_PRODUCTO_PRESENTACION">
+  <Association Name="FK__PRODUCTO__ID_PRE__20C1E124">
     <End Role="PRESENTACION" Type="Self.PRESENTACION" Multiplicity="0..1" />
     <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
     <ReferentialConstraint>
@@ -122,30 +112,6 @@ advertencia 6002: La tabla o vista 'FarmaciaA.dbo.FARMACIA' no tiene definida ni
       </Principal>
       <Dependent Role="PRODUCTO">
         <PropertyRef Name="ID_PRESENTACION" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_PRODUCTO_SUCURSAL_PRODUCTO">
-    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
-    <End Role="SUCURSAL_PRODUCTO" Type="Self.SUCURSAL_PRODUCTO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PRODUCTO">
-        <PropertyRef Name="ID_PRODUCTO" />
-      </Principal>
-      <Dependent Role="SUCURSAL_PRODUCTO">
-        <PropertyRef Name="ID_PRODUCTO" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_SUCURSAL_SUCURSAL_PRODUCTO">
-    <End Role="SUCURSAL" Type="Self.SUCURSAL" Multiplicity="1" />
-    <End Role="SUCURSAL_PRODUCTO" Type="Self.SUCURSAL_PRODUCTO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SUCURSAL">
-        <PropertyRef Name="ID_SUCURSAL" />
-      </Principal>
-      <Dependent Role="SUCURSAL_PRODUCTO">
-        <PropertyRef Name="ID_SUCURSAL" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -158,37 +124,25 @@ advertencia 6002: La tabla o vista 'FarmaciaA.dbo.FARMACIA' no tiene definida ni
     <Parameter Name="lon2" Type="float" Mode="In" />
     <Parameter Name="lat2" Type="float" Mode="In" />
   </Function>
-  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  <Function Name="nearby" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="producto" Type="varchar(max)" Mode="In" />
+    <Parameter Name="lonC" Type="varchar" Mode="In" />
+    <Parameter Name="latC" Type="varchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="SUCURSAL" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="ID_SUCURSAL" Type="int" Nullable="false" />
+          <Property Name="LATITUD" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="LONGITUD" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="DIRECCION" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="ID_SUCURSAL_PRODUCTO" Type="int" Nullable="false" />
+          <Property Name="PRODUCTO" Type="nvarchar(max)" />
+          <Property Name="PRECIO" Type="decimal" Precision="7" Scale="2" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
   </Function>
-  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="FarmaciaAModelStoreContainer">
     <EntitySet Name="CATEGORIA" EntityType="Self.CATEGORIA" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LABORATORIO" EntityType="Self.LABORATORIO" Schema="dbo" store:Type="Tables" />
@@ -196,7 +150,6 @@ advertencia 6002: La tabla o vista 'FarmaciaA.dbo.FARMACIA' no tiene definida ni
     <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SUCURSAL" EntityType="Self.SUCURSAL" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SUCURSAL_PRODUCTO" EntityType="Self.SUCURSAL_PRODUCTO" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="t_oauthtoken" EntityType="Self.t_oauthtoken" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FARMACIA" EntityType="Self.FARMACIA" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
@@ -206,25 +159,17 @@ advertencia 6002: La tabla o vista 'FarmaciaA.dbo.FARMACIA' no tiene definida ni
 [FARMACIA].[PAGINA_WEB] AS [PAGINA_WEB]
 FROM [dbo].[FARMACIA] AS [FARMACIA]</DefiningQuery>
     </EntitySet>
-    <AssociationSet Name="FK_PRODUCTO_CATEGORIA" Association="Self.FK_PRODUCTO_CATEGORIA">
+    <AssociationSet Name="FK__PRODUCTO__ID_CAT__1ED998B2" Association="Self.FK__PRODUCTO__ID_CAT__1ED998B2">
       <End Role="CATEGORIA" EntitySet="CATEGORIA" />
       <End Role="PRODUCTO" EntitySet="PRODUCTO" />
     </AssociationSet>
-    <AssociationSet Name="FK_PRODUCTO_LABORATORIO" Association="Self.FK_PRODUCTO_LABORATORIO">
+    <AssociationSet Name="FK__PRODUCTO__ID_LAB__1FCDBCEB" Association="Self.FK__PRODUCTO__ID_LAB__1FCDBCEB">
       <End Role="LABORATORIO" EntitySet="LABORATORIO" />
       <End Role="PRODUCTO" EntitySet="PRODUCTO" />
     </AssociationSet>
-    <AssociationSet Name="FK_PRODUCTO_PRESENTACION" Association="Self.FK_PRODUCTO_PRESENTACION">
+    <AssociationSet Name="FK__PRODUCTO__ID_PRE__20C1E124" Association="Self.FK__PRODUCTO__ID_PRE__20C1E124">
       <End Role="PRESENTACION" EntitySet="PRESENTACION" />
       <End Role="PRODUCTO" EntitySet="PRODUCTO" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PRODUCTO_SUCURSAL_PRODUCTO" Association="Self.FK_PRODUCTO_SUCURSAL_PRODUCTO">
-      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
-      <End Role="SUCURSAL_PRODUCTO" EntitySet="SUCURSAL_PRODUCTO" />
-    </AssociationSet>
-    <AssociationSet Name="FK_SUCURSAL_SUCURSAL_PRODUCTO" Association="Self.FK_SUCURSAL_SUCURSAL_PRODUCTO">
-      <End Role="SUCURSAL" EntitySet="SUCURSAL" />
-      <End Role="SUCURSAL_PRODUCTO" EntitySet="SUCURSAL_PRODUCTO" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

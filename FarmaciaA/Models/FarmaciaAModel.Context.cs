@@ -34,7 +34,6 @@ namespace FarmaciaA.Models
         public DbSet<PRODUCTO> PRODUCTO { get; set; }
         public DbSet<SUCURSAL> SUCURSAL { get; set; }
         public DbSet<SUCURSAL_PRODUCTO> SUCURSAL_PRODUCTO { get; set; }
-        public DbSet<sysdiagrams> sysdiagrams { get; set; }
         public DbSet<t_oauthtoken> t_oauthtoken { get; set; }
         public DbSet<FARMACIA> FARMACIA { get; set; }
     
@@ -139,6 +138,24 @@ namespace FarmaciaA.Models
         public virtual int sp_upgraddiagrams()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
+        }
+    
+        [EdmFunction("FarmaciaAEntities", "nearby")]
+        public virtual IQueryable<nearby_Result> nearby(string producto, string lonC, string latC)
+        {
+            var productoParameter = producto != null ?
+                new ObjectParameter("producto", producto) :
+                new ObjectParameter("producto", typeof(string));
+    
+            var lonCParameter = lonC != null ?
+                new ObjectParameter("lonC", lonC) :
+                new ObjectParameter("lonC", typeof(string));
+    
+            var latCParameter = latC != null ?
+                new ObjectParameter("latC", latC) :
+                new ObjectParameter("latC", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<nearby_Result>("[FarmaciaAEntities].[nearby](@producto, @lonC, @latC)", productoParameter, lonCParameter, latCParameter);
         }
     }
 }

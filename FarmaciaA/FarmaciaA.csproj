@@ -217,6 +217,9 @@
     <Compile Include="Models\LABORATORIO.cs">
       <DependentUpon>FarmaciaAModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\nearby_Result.cs">
+      <DependentUpon>FarmaciaAModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\PRESENTACION.cs">
       <DependentUpon>FarmaciaAModel.tt</DependentUpon>
     </Compile>
@@ -235,9 +238,6 @@
       <DependentUpon>FarmaciaAModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SUCURSAL_PRODUCTO.cs">
-      <DependentUpon>FarmaciaAModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagrams.cs">
       <DependentUpon>FarmaciaAModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\t_oauthtoken.cs">
